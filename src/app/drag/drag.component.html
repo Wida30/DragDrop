@@ -1,0 +1,34 @@
+<p>drag works!</p>
+
+<div class="row">
+    <div 
+    cdkDropList 
+    class="col-6 bloque1" 
+    #lista1="cdkDropList" 
+    [cdkDropListData]="list1" 
+    [cdkDropListConnectedTo]="[lista2]"
+    (cdkDropListDropped)="drop($event)">
+        <div cdkDrag class="block block-1" *ngFor="let uno of list1">
+            <span>{{uno}}</span>
+        </div>
+
+    </div>
+
+    <div 
+    cdkDropList 
+    class="col-6 bloque2" 
+    #lista2="cdkDropList" 
+    [cdkDropListData]="list2" 
+    [cdkDropListConnectedTo]="[lista1]"
+    (cdkDropListDropped)="drop($event)">
+        <div cdkDrag class="block block-2" *ngFor="let dos of list2">
+            <span>{{dos}}</span>
+        </div>
+
+    </div>
+
+   
+
+
+
+</div>
